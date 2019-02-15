@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MATRIMONY</title>
+
+
+
+
+
+
+
+
+
+
+
+<!-- link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="style.css">
+<div style="text-align:center">
+    <h2>LIST OF MEMBERS</h2>
+    <p>Click on the images below:</p>
+  </div>
+  
+  <!-- The four columns -->
+  <div class="row">
+    <div class="column">
+      <img src="https://preview.ibb.co/erdq8p/Employee-1.jpg" alt="Nature" style="width:50%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://preview.ibb.co/erdq8p/Employee-1.jpg" alt="Snow" style="width:50%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://preview.ibb.co/erdq8p/Employee-1.jpg"alt="Mountains" style="width:50%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://preview.ibb.co/erdq8p/Employee-1.jpg" alt="Lights" style="width:50%" onclick="myFunction(this);">
+    </div>
+    
+  </div>
+  
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+  </div>
+  <script>
+  function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+  }
+  </script>
+  </head>
+  </html>

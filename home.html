@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MATRIMONY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload=" window.history.backword();">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-heart-empty"></span><b>ATRIMONY</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"<span class="	glyphicon glyphicon-home"></span>Home</a></li>
+        <li> <a data-toggle="modal" data-target="#contact" data-original-title><span class="glyphicon glyphicon-envelope	
+          "></span>Contact</a></li>
+          <!-- <li> <a data-toggle="modal" data-target="#filter" data-original-title><span class="	glyphicon glyphicon-filter	
+            "></span></a></li> -->
+        <!-- <li><a href="#">Help</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li> <a data-toggle="modal" data-target="#filter" data-original-title><span class="	glyphicon glyphicon-filter	
+            "></span></a></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="signup.html"><span class="glyphicon glyphicon-log-in"></span> SIGNUP</a></li>
+        <!-- <li><a href="test.html">Test -->
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="panel panel-primary">
+          <div class="panel-heading" style="background-color: #555 !important">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span> Any questions? Feel free to contact us.</h4>
+          </div>
+          <form action="#" method="post" accept-charset="utf-8">
+          <div class="modal-body" style="padding: 5px;">
+                <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                          <input class="form-control" name="firstname" placeholder="Firstname" type="text" required autofocus />
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                          <input class="form-control" name="lastname" placeholder="Lastname" type="text" required />
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                          <input class="form-control" name="email" placeholder="E-mail" type="text" required />
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                          <input class="form-control" name="subject" placeholder="Subject" type="text" required />
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                          <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+                      </div>
+                  </div>
+              </div>  
+              <div class="panel-footer" style="margin-bottom:-14px;">
+                  <input type="submit" class="btn btn-success" value="Send"/>
+                      <!-- <span class="glyphicon glyphicon-ok"></span> -->
+                  <input type="reset" class="btn btn-danger" value="Clear" />
+                      <!--<span class="glyphicon glyphicon-remove"></span>-->
+                  <button style="float: right;" type="button" class="btn btn-default btn-close" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="panel panel-primary">
+          <div class="panel-heading" style="background-color: #555 !important">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span></h4>
+          </div>
+          <!-- <form action="#" method="post" accept-charset="utf-8"> -->
+          <div class="modal-body" style="padding: 5px;">
+                <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                        <div class="dropdown">
+                          
+                            <span class="glyphicon glyphicon-search"></span>LOOKING FOR:</button>
+                
+                                <select>
+                                    <li><option selected="selected">select </option></li>
+                                    <li><option value="null">BRIDE</option></li>
+                      
+                                    <li><option value="null">GROOM</option></li>
+                                    </select>
+                            
+                          
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 10px;">
+                          Age:
+                          <select id="country1" onchange="change_country(this.value)" class="frm-field required">
+                              <option value="null">20</option>
+                              <option value="null">21</option>
+                              <option value="null">22</option>
+                              <option value="null">23</option>
+                              <option value="null">24</option>
+                              <option value="null">25</option>
+                              <option value="null">- - -</option>
+                          </select>
+                          <span>To </span>
+                          <select id="country2" onchange="change_country(this.value)" class="frm-field required">
+                              <option value="null">30</option>
+                              <option value="null">31</option>
+                              <option value="null">32</option>
+                              <option value="null">33</option>
+                              <option value="null">34</option>
+                              <option value="null">35</option>
+                              <option value="null">- - -</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                          RELIGION:
+              <select>
+                      <option selected="selected">select </option>
+                <option value="null">HINDU</option>
+                <option value="null">CHRISTIAN</option>
+                <option value="null">MUSLIM</option>
+                <option value="null">No Religious Belief</option>
+                </select>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
+                          MOTHER LANGUAGE:
+                <select>
+                        <option selected="selected">select </option>
+                  <option value="null">TELUGU</option>
+                  <option value="null">HINDI</option>
+                  <option value="null">ENGLISH</option>
+
+                  </select>
+                      </div>
+                  </div>
+                  
+                
+              <div class="panel-footer" style="margin-bottom:-14px;">
+                  <a href="img.html" class="btn btn-info" role="button"onclick="Submit()">Submit</a>
+                      <!--<span class="glyphicon glyphicon-ok"></span>-->
+                  
+              </div>
+          </div>
+       <!-- <a href="img.html" class="btn btn-info" role="button"onclick="Submit()">Submit</a> -->
+      
+      </div> 
+  </div> 
+</div>
+</div>
+<div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+        </div>
+        <div class="col-sm-8 text-left"> 
+          <h1>Welcome</h1>
+         
+          <td align="center">
+                <button type="button" class="btn btn-primary"onclick="print()">USER PROFILES</button>
+          <div id="span1" ></div>
+          <div id="span2" ></div>
+    </div>
+    <div class="col-sm-1 sidenav">
+            <div>
+                    <img src="cars.gif">
+            </div>
+            <br><br>
+            <div>
+                    <img src="dribble_gif.gif">
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="container-fluid text-center">
+            <p>THANK YOU</p>
+          </footer>
+          
+<script>
+$(document).ready(function(){
+  $(":selected").css("background-color", "white");
+});
+
+
+
+ var data2={};
+ function printdata(value){   
+   var htmldata ="";
+   var dat1 =data2.filter(function(index){
+    return index.fname===value;
+   })
+   console.log(dat1)
+   htmldata +=' <div  style="background-color:white"><center> <p><b>FIRST NAME = ' + dat1[0].fname + '</p><p>LAST NAME=' + dat1[0].lname + '</p> <p>HEIGHT=' + dat1[0].height + '</p><p>ADDRESS=' + dat1[0].address + '</p><p>DOB=' + dat1[0].dob + 
+                '</p> <p>EMAIL=' + dat1[0].email + '</p><p>GENDER=' + dat1[0].gender + '</p><p>WEIGHT=' + dat1[0].weight + '</p><p>HOBBIES=' + dat1[0].hobbies + '</p><p>PHONENUMBER=' + dat1[0].phonenumber + '</p><p>PHOTO=' + dat1[0].photo + '</b></p></center><a href="pay.html"><h4><i class="glyphicon glyphicon-comment"></i></h4></a></div></div>'
+                $('#span2').html(htmldata);
+ }
+  function print(){    
+        // alert("m");
+    var data={};
+     var htmldata='';
+    $.ajax({
+      url: '/data1',
+      type: 'GET',
+      data:data,
+      dataType: "json",
+       // mongod is expecting the parameter name to be called "jsonp"
+       success: function (data1) {
+        console.log('success', data1);
+            // document.getElementById("p7").innerHTML = data1;
+            data2 = data1;
+            htmldata +='<html>'
+           // htmldata +='<div>'
+           // htmldata += '<div  style="background-color:lightblue"><p>FIRST NAME</p>'<p>' + value.fname + '</p>'<p>LAST NAME</p><p>HEIGHT</p><p>ADDRESS</p><p>PASSWORD</p><p>CONFIRMPASSWORD</p><p>DOB</p><p>EMAIL</p><th>GENDER</p><th>WEIGHT</p><p>HOBBIES</p><p>PHONENUMBER</p><p>PHOTO</p>'
+             //for(i=0; i<data.length;i++){
+//                 // console.log("dfd",data1[i].username);
+               $.each(data2, function (i, value) {
+              var email = value.email;
+               var psw=value.psw; 
+            //console.log(fname);
+              //var fname = value.fname;
+              
+htmldata +='<div ><button type="button"  value="print" onclick=printdata("'+value.fname+'")>' +  value.fname + '</button>'
+   
+    //   <div  style="background-color:white"><center> <p><b>FIRST NAME = ' + value.fname + '</p><p>LAST NAME=' + value.lname + '</p> <p>HEIGHT=' + value.height + '</p><p>ADDRESS=' + value.address + '</p><p>DOB=' + value.dob + 
+    //             '</p> <p>EMAIL=' + value.email + '</p><p>GENDER=' + value.gender + '</p><p>WEIGHT=' + value.weight + '</p><p>HOBBIES=' + value.hobbies + '</p><p>PHONENUMBER=' + value.phonenumber + '</p><p>PHOTO=' + value.photo + '</b></p></center> </div></div>'
+    //         //  htmldata += '<div  style="background-color:white"><center> <p>FIRST NAME = ' + value.fname + '</p><p>LAST NAME=' + value.lname + '</p> <p>HEIGHT=' + value.height + '</p><p>ADDRESS=' + value.address + '</p><p>DOB=' + value.dob + 
+            //    '</p> <p>EMAIL=' + value.email + '</p><p>GENDER=' + value.gender + '</p><p>WEIGHT=' + value.weight + '</p><p>HOBBIES=' + value.hobbies + '</p><p>PHONENUMBER=' + value.phonenumber + '</p><p>PHOTO=' + value.photo + '</p></center></div>'
+           });
+         //   onclick="edit1('+ email +')"       
+               htmldata +='</html>'
+                      $('#span1').html(htmldata);
+     },
+     error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log('error', errorThrown);
+       
+     }
+   });
+
+     }
+</script>
+</body>
+</html>

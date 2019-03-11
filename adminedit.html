@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>User Details</title>
+    <style>
+        body {
+
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            /* background: url('http://getwallpapers.com//full/d/6/1/1173146-wedding-ring-wallpaper-1920x1200-ipad.jpg') no-repeat center center fixed;  */
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body onload="displaydata()">
+    <!----------------------------------- ADMIN EDIT FORM--------------------------------------- -->
+    <form>
+        <!-- <input type="button" value="Userdetails" onclick="displaydata()"> -->
+        <!-- <button type="button" class="btn btn-info" value="User Details" onclick="displaydata()">User Details</button>
+     <!-- <button type="button" class="btn btn-info" data-toggle="collapse" onclick="displaydata()" data-target="#demo">User Details </button> -->
+        <div class="row">
+            <div class="col-lg-12">
+            </div>
+            <div class="col-lg-12">
+                <div id="print2"></div>
+            </div>
+        </div>
+    </form>
+    <div class="d-flex justify-content-center">
+        <a href="/index.html">
+            <input type="button" id="logout" name="login" value="LOGOUT" onclick="logout()">
+        </a>
+    </div>
+    </div>
+    <!-- <script src="UserDetails.js"></script> -->
+    <!-------------------------------VIEWING  USER DETAILS FOR ADMIN------------------------------------ -->
+    <script>
+        $(document).ready(function () {
+            // console.log( "ready!" );
+            displaydata();
+        });
+        // code to print data in table form in htmlpage
+        var data4 = {};
+        function displaydata() {
+            var htmldata = '';
+            var data = {};
+            $.ajax({
+                url: '/data1',
+                type: 'GET',
+                data: data,
+                dataType: "json",
+                success: function (data4) {
+                    console.log('success', data4);
+                    // var myobj = JSON.stringify(data1);
+                    // debugger;
+                    //document.getElementById("span1").innerHTML = data1;
+                    data = data4;
+                    htmldata += '<html>'
+                    htmldata += '<table class="table">'
+                    htmldata += '<tr><th>FIRST NAME</th><th>LAST NAME</th><th>DateofBirth</th><th>Height</th><th>Weight</th><th>Hobbies</th><th>Address</th><th>Email</th><th>Gender</th><th>Phone</th><th>Qualification</th><th>Proffession</th><th>Working</th><th>Salary</th><th>Religion</th><th>Language</th><th>Zodiac</th><th>Id</th><th>EDIT/DELETE</th></tr>'
+                    //  for(i=0; i<data.length;i++){
+                    // console.log("dfd",data1[i].username);
+                    $.each(data4, function (i, value) {
+                        var email = value.email;
+                        console.log(email);
+                        //   var id=value.uids; 
+                        htmldata += '<tr><td>' + value.fname + '</td><td>' + value.lname + '</td><td>' + value.dob + '</td><td>' + value.height + '</td><td>' + value.weight + '</td><td>' + value.hobbies + '</td><td>' + value.address + '</td><td>' + value.email + '</td><td>' + value.gender + '</td><td>' + value.phonenumber + '</td><td>' + value.qualification + '</td><td>' + value.profession + '</td><td>' + value.working + '</td><td>' + value.salary + '</td><td>' + value.Religion + '</td><td>' + value.language + '</td><td>' + value.zodiac + '</td><td>' + value.id + '</td><td><input type="button" class="btn btn-default btn-sm" onclick=edit1("' + value.email + '") value="edit"><input type="button" class="btn btn-default btn-sm" onclick=delete1("' + value.id + '") value="delete"></td></tr>'
+                    });
+                    htmldata += '</table></html>'
+                    $('#print2').html(htmldata);
+                },
+                error: function (errorThrown) {
+                    console.log('error', errorThrown);
+                }
+            });
+        }
+ /////////////////////////////// EDIT FUNCTIONALITY FOR ADMIN//////////////////////////////////////
+        function edit1(email) {
+            var email = email;
+            alert(email);
+            window.location.href = "./edit.html?email=" + email;
+        }
+        ///////////////////////////DELETE FUNCTIONALITY FOR ADMIN///////////////////////////
+        // code for deleting data --------
+        function delete1(email) {
+            console.log("email");
+            // alert("hiiiii");
+            var a = {}
+            a.email = email;
+            $.ajax({
+                url: '/deleterow/' + a.email,
+                type: 'POST',
+                success: function (data) {
+                    console.log("sucessfully deleted");
+                },
+            })
+        }
+    </script>
+</body>
+
+</html>

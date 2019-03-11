@@ -1,212 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="main.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/style1.css">
     <title>Matrimony Enroll</title>
 </head>
+
 <body>
-    
-    
+    <!--------------------------------------------- SIGNUPFORM------------------------------------- -->
     <div class="container">
-        <form class="form-horizontal" role="form">
-            <h2 >ENROLL HERE</h2>
+
+        <form class="form-horizontal" role="form" id="myform" onsubmit="return dateCheck(this)">
+            <h2>ENROLL HERE</h2>
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3 control-label">First Name*</label>
-                <div class="col-sm-9" >
-                    <input type="text" id="firstName" placeholder="First Name" class="form-control" onblur="firstname()"  required>
+                <div class="col-sm-9">
+                    <input type="text" name="firstName" id="firstName" placeholder="First Name" class="form-control"
+                        onblur="firstname()" required>
                     <span id="p2"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="lastName" class="col-sm-3 control-label">Last Name*</label>
                 <div class="col-sm-9">
-                    <input type="text" id="lName" placeholder="Last Name" class="form-control" onblur="Lastname()" required>
+                    <input type="text" name="lName" id="lName" placeholder="Last Name" class="form-control"
+                        onblur="firstname()" required>
                     <span id="p3"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="email" class="col-sm-3 control-label">Email* </label>
                 <div class="col-sm-9">
-                    <input type="email" id="email" placeholder="Email" class="form-control" name= "email" onblur="Email()" required>
+                    <input type="email" name="email" id="email" placeholder="Email" class="form-control" name="email"
+                        onblur="Email()" required>
                     <span id="p4"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="password" class="col-sm-3 control-label">Password*</label>
                 <div class="col-sm-9">
-                    <input type="password" id="pswrd" placeholder="Password" class="form-control" onblur="pwd()" required>
+                    <input type="password" name="pswrd" id="pswrd" placeholder="Password" class="form-control"
+                        onblur="pwd()" required>
                     <span id="p5"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
                 <div class="col-sm-9">
-                    <input type="password" id="cpwd" placeholder="Password" class="form-control" onblur="Cpwd()" required>
+                    <input type="password" name="cpwd" id="cpwd" placeholder="Password" class="form-control"
+                        onblur="Cpwd()" required>
                     <span id="p6"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
                 <div class="col-sm-9">
-                    <input type="Date" id="birth" class="form-control" onblur="Dob()" required>
+                    <input type="Date" name="birth" id="birth" class="form-control" onblur="Dob()" required>
                     <span id="p7"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phoneNumber" class="col-sm-3 control-label">Phone number* </label>
                 <div class="col-sm-9">
-                    <input type="number" id="phoneNumber" placeholder="Phone number" class="form-control" onblur="pnum()" required>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" maxlength="10" placeholder="Phone number"
+                        class="form-control" onblur="pnum()" required>
                     <span id="p8"></span>
                     <span class="text-secondary">Your phone number won't be disclosed anywhere </span>
                 </div>
             </div>
             <div class="form-group row">
-                    <label for="heigh" class="col-sm-3 control-label" >Height* </label>
+                <label for="heigh" class="col-sm-3 control-label">Height* </label>
                 <div class="col-sm-9">
-                    <input type="text" id="heigh" placeholder="Please write your height " class="form-control" onblur="Height()" required>
+                    <input type="text" name="height" id="height" placeholder="Please write your height "
+                        class="form-control" onblur="Height()" required>
                     <span id="p9"></span>
                 </div>
             </div>
-             <div class="form-group row">
-                    <label for="weight" class="col-sm-3 control-label">Weight* </label>
+            <div class="form-group row">
+                <label for="weight" class="col-sm-3 control-label">Weight* </label>
                 <div class="col-sm-9">
-                    <input type="number" id="weight" maxlength="3" placeholder="Please write your weight in KILOGRAMS" class="form-control" onblur="Weight()" required>
+                    <input type="number" name="weight" id="weight" maxlength="3"
+                        placeholder="Please write your weight in KILOGRAMS" class="form-control" onblur="Weight()"
+                        required>
                     <span id="p0"></span>
                 </div>
             </div>
-            <div class="form-group row" >
+            <div class="form-group row">
                 <label class="control-label col-sm-3 control-label">Gender*</label>
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-4">
                             <label for="g2" class="radio-inline ">
-                     <input type="radio" id="g2" name="g" value="female" onblur="gen()" required/>FEMALE
+                                <input type="radio" id="g2" name="g" value="female" onblur="gen()" required />FEMALE
                             </label>
                             <span id="p11"></span>
                         </div>
-                        
                         <div class="col-sm-4">
                             <label for="g1" class="radio-inline">
-                                <input type="radio" id="g1" name="g" value="male" style="color:lightslategray;" required>MALE
+                                <input type="radio" id="g1" name="g" value="male" style="color:lightslategray;"
+                                    required>MALE
                             </label>
 
                         </div>
                     </div>
-                </div>
-            </div> <!-- /.form-group -->
-           
-<!-- 
-            <div class="form-group row">
-                <label class="control-label col-sm-3 control-label">Must Be Educated*</label>
-                <div class="col-sm-9">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <label class="radio-inline ">
-                     <input type="radio" id="e2" name="edu" value="yes" onblur="Educ()" required/>YES
-                            </label>
-                            <span id="p11"></span>
-                        </div>
-                        <br><br>
-                        <div class="col-sm-4">
-                            <label class="radio-inline">
-                                <input type="radio" id="e1" name="edu" value="no" required>NO 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div> /.form-group -->
-       
-            <div class="form-group row">
-                <div class="row col-sm-4">
-                        <label for="hobbies col-sm-3 control-label" required>Hobbies*</label>
-                </div>
-                        <div class="row">
-                            <div class="col-sm-4 ">
-                                <textarea name="hobbies" id="hobbies" cols="20" rows="2" onclick="Hobbies()" required></textarea>
-                                <span id="hai"></span>
-                            </div>
-                        </div>
-                    </div>
-                
-
-                <div class="form-group row">
-                        <div class="row col-sm-4">
-                                <label for="address col-sm-3 control-label" required>Address*</label>
-                        </div>
-                                <div class="row">
-                                    <div class="col-sm-4 ">
-                                        <textarea name="address" id="address" cols="20" rows="2" onclick="Address()" required></textarea>
-                                        <span id="hye"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <!-- <div class="form-group row">
-                                <label for="photo" class="col-sm-3 control-label" required>Upload Pic*</label>
-                                <div class="col-sm-9">
-                                    <input type="file" id="photo"  class="form-control"placeholder="upload photo" onblur="Photo()" required>
-                                    <span id="hi"></span>
-                                </div>
-                            </div>
-                 -->
-                 <div class="form-group has-feedback">
-                        <input type="file" id="inputFileToLoad" class="form-control" placeholder="photo" accept="image/*;capture=camera" name="userPhoto" single />
-                        <i class="glyphicon glyphicon-fire form-control-feedback"></i>
-                    </div>
-                    <div class="form-group has-feedback">
-                            <input type="text" id="response" class="form-control" placeholder="Base-64 value" />
-                            <i class="glyphicon glyphicon-globe form-control-feedback"></i>
-                        </div>
-            <div class="form-group row">
-                <div class="col-sm-9 col-sm-offset-3">
-                    <span  class="text-secondary">*Required fields</span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary btn-block" onclick="reg()">Register</button>
-        </form> <!-- /form -->
-    </div> <!-- ./container -->
-    <!-- <div class="container"> -->
+            <div class="form-group row">
+                <label for="qualification" class="col-sm-3 control-label">Educational Qualification* </label>
+                <div class="col-sm-9">
+                    <input type="text" name="qualification" id="qualification"
+                        placeholder="Please write your Educational Qualification" class="form-control" onblur="Qualif()"
+                        required>
+                    <span id="edu"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="profession" class="col-sm-3 control-label">Profession* </label>
+                <div class="col-sm-9">
+                    <input type="text" name="profession" id="profession" placeholder="Please write your Job Profession"
+                        class="form-control" onblur="Prof()" required>
+                    <span id="pro"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="working" class="col-sm-3 control-label">Working Company* </label>
+                <div class="col-sm-9">
+                    <input type="text" name="working" id="working"
+                        placeholder="Please write your present working company" class="form-control" onblur="Work()"
+                        required>
+                    <span id="work"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="salary" class="col-sm-3 control-label">Salary Getting* </label>
+                <div class="col-sm-9">
+                    <input type="number" name="salary" id="salary" placeholder="Please write salary package per Annum"
+                        class="form-control" onblur="Salary()" required>
+                    <span id="package"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="reli" class="col-sm-3 control-label">Religion* </label>
+                <div class="col-sm-9">
+                    <select name="Religion" id="Religion" onblur="Religion()" required>
+                        <option value="" disabled="disabled" selected="selected">Please select Religion</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Muslim">Muslim</option>
+                        <option value="Christian">Christian</option>
+                        <option value="Not Specified">Not Specified</option>
+                    </select>
+                    <span id="relig"></span>
+                </div>
+            </div>
 
-            <!-- Trigger the modal with a button -->
-           
-                  <!-- <div class="container">
-                
-                
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">HELP</button>
-                  
-                 <div class="modal fade" id="myModal1" role="dialog">
-                      <div class="modal-dialog modal-sm">
-                        <div class="modal-Content">
-                          <div class="modal-Header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-Title">Help</h4>
-                          </div>
-                          <div class="modal-Body">
-                         
-                                Help<br>
-                                Security<br>
-                                My Requests<br>
-                                
-                           
-                          </div>
-                          <div class="modal-Footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                      </div>
+            <div class="form-group row">
+                <label for="language" class="col-sm-3 control-label">Mother Tongue* </label>
+                <div class="col-sm-9">
+                    <select name="language " id="language" onblur="language()" required>
+                        <option value="" disabled="disabled" selected="selected">Please select Language</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="urdu">Urdu</option>
+                    </select>
+                    <span id="Lang"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="zodiac" class="col-sm-3 control-label">Zodiac Sign* </label>
+                <div class="col-sm-9">
+                    <select name="zodiac" id="zodiac" onblur="Zodiac()" required>
+                        <option value="" disabled="disabled" selected="selected">Please select a Zodiac</option>
+                        <option value="capricorn">Capricorn</option>
+                        <option value="aquarius">Aquarius</option>
+                        <option value="pisces">Pisces</option>
+                        <option value="aries">Aries</option>
+                        <option value="taurus">Taurus</option>
+                        <option value="gemini">Gemini</option>
+                        <option value="cancer">Cancer</option>
+                        <option value="leo">Leo</option>
+                        <option value="virgo">Virgo</option>
+                        <option value="libra">Libra</option>
+                        <option value="scorpio">Scorpio</option>
+                        <option value="sagittarius">Sagittarius</option>
+                    </select>
+
+                    <span id="Sign"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="row col-sm-4">
+                    <label for="hobbies col-sm-3 control-label" required>Hobbies*</label>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 ">
+                        <textarea name="hobbies" id="hobbies" cols="20" rows="2" onclick="Hobbies()"
+                            required></textarea>
+                        <span id="hai"></span>
                     </div>
-                  </div>
-                 -->
- 
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="row col-sm-4">
+                    <label for="address col-sm-3 control-label" required>Address*</label>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 ">
+                        <textarea name="address" id="address" cols="20" rows="2" onclick="Address()"
+                            required></textarea>
+                        <span id="hye"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="file" id="inputFileToLoad" class="form-control" placeholder="photo"
+                    accept="image/*;capture=camera" name="userPhoto" single />
+                <i class="glyphicon glyphicon-fire form-control-feedback"></i>
+            </div>
+            <div class="form-group has-feedback" id="img" hidden>
+                <input type="text" id="response" class="form-control" placeholder="Base-64 value" />
+                <i class="glyphicon glyphicon-globe form-control-feedback"></i>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <span class="text-secondary">*Required fields</span>
+                </div>
+            </div>
+            <div id="contact_submit">
+                <button type="submit" class="btn btn-danger btn-block" onclick="reg()">Register</button>
+            </div>
+        </form>
+        <script src="public/js/signup.js"></script>
+        <script src="/public/js/ajaxcall.js"></script>
 </body>
+
 </html>

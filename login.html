@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>  -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
- 
-<link rel="stylesheet" href="style.css">
-   <script src="login.js"></script>
-              
-
+  <title>MATRIMONY</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-       
-<center>
-        <h2 >LOGIN HERE</h2>
-<form name="form1">
-        <!-- <body background="1.jpg"> -->
-               
-            <tr>
-            <!-- <td>Email</td> -->
-            <td>
-                <input type="email"  placeholder="ENTER YOUR EMAIL"id="email"   onblur="emails()"/></br><span id="p4"></span></td>
-                <!-- <input type="text" placeholder="A red placeholder text.."> -->
-        </tr></div>
-
-        <tr><div class = "div">
-            <!-- <td>Password</td> -->
-            <td><input type="password"  placeholder="ENTER YOUR PASSWORD" id="pswrd" onblur="psws()" /></br><span id="p5"></span></td> 
-        </tr>
-        <td align="center"><button type="button" id="sub" value="login" onclick="Login()">LOGIN </button><span id="p6"></span></td>
-    </tr>
-    <!-- <a href="home.html" button type="button" onclick="Submit()">Back</button></a> -->
-    <a href="forgot.html" button type="button" onclick="fgpsw()">Forgotpassword?</button></a>
-</tr>
-
-
-<div id="span1" ></div>
-
-                  
- 
-</form>
+  <!------------------------------------------ NAV BAR----------------------------------------- -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-heart-empty"></span><b>ATRIMONY</b></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html"><span class="	glyphicon glyphicon-home"
+                style="font-size: 20px;"></span></a>
+          </li>
+          <li> <a data-toggle="modal" data-target="#contact" data-original-title><span
+                class="glyphicon glyphicon-envelope" style="font-size: 20px"></span></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="signup.html"><span class="glyphicon glyphicon-log-in"></span> SIGNUP</a></li>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- -------------------------------LOGIN FORM----------------------------------- -->
+  <center>
+    <h2>LOGIN HERE</h2>
+    <form name="form1">
+      <tr>
+        <td>
+          <input type="email" placeholder="ENTER YOUR EMAIL" id="email" onblur="emails()" /></br><span id="p4"></span>
+        </td>
+      </tr>
+      </div>
+      <tr>
+        <div class="div">
+          <td><input type="password" placeholder="ENTER YOUR PASSWORD" id="pswrd" onblur="psws()" /></br><span
+              id="p5"></span></td>
+      </tr>
+      <td align="center"><button type="button" id="sub" value="login" onclick="Login()">LOGIN </button><span
+          id="p6"></span></td>
+      </tr>
+      <a href="forgot.html" button type="button" onclick="fgpsw()">Forgotpassword?</button></a>
+      </tr>
+    </form>
 </body>
+<script src="public/js/login.js"></script>
+<script src="/public/js/ajaxcall.js"></script>
 </html>

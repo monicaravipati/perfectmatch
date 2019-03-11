@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>  -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" href="sweetalert2/sweetalert2.min.css"> -->
+<!------ Include the above in your HEAD tag ---------->
+ 
+<link rel="stylesheet" href="style.css">
+   <!-- <script src="login.js"></script> -->
+</head>
+<body>
+    <input type="text" id="uname" placeholder="username" required/>
+    <br><br>
+    <input type="password" id="password" placeholder="password" required/>
+    <br><br>
+    <button  onclick="val()">login</button>
+</body>
+<script src="sweetalert2.all.min.js"></script>
+<script>
+    function val(){
+       
+        var username='admin';
+        var password='admin';
+       var username2= document.getElementById('uname').value;
+        var password2=document.getElementById('password').value;
+        if((username==username2)&&(password==password2)){
+            swal(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+        }
+            else{
+               swal("Oops!", "Something went wrong!", "error");
+            }
+        }
+     
+</script>
+</html>

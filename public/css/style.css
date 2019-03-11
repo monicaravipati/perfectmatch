@@ -1,0 +1,151 @@
+body {
+     
+     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     background: rgb(122, 106, 106) !important;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+ 
+*[role="form"] {
+   max-width: 530px;
+   padding: 15px;
+   margin: 0 auto;
+   border-radius: 0.3em;
+   background-color:rgba(0,0,0,0.2);
+}
+
+*[role="form"] h2 { 
+   font-family: 'Open Sans' , sans-serif;
+   font-size: 40px;
+   font-weight: 600;
+   color: #000000;
+   margin-top: 5%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   background-color:rgba(0,0,0,0.2);
+ }
+ footer {
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  padding: 7px;
+}
+.section .row{
+   margin-top: 7%;
+   margin-bottom: 10%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(122, 106, 106) !important;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color:rgba(0,0,0,0.2);
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color:rgba(0,0,0,0.2);
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 325px){
+    .btn-close {
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+    
+}
+.modal-footer .btn+.btn {
+    margin-left: 0px;
+}
+.progress {
+    margin-right: 10px;
+}
+
+.image  {
+  margin-bottom: 30px !important;
+}
+.list {
+  opacity: 1;
+  -webkit-transition: opacity 1000ms linear;
+  transition: opacity 1000ms linear;
+}
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+.zoom {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+.carousel-inner img {
+  /* -webkit-filter: grayscale(90%);
+  filter: grayscale(90%); /* make all photos black and white */ 
+ /* width: 100%;  Set width to 100% 
+  margin: auto;  */
+
+
+
+}
